@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8"/>
+    <title> MISA CukCuk </title>
+    <link href="../css/body.css" rel="stylesheet"/>
+    <link href="../css/layout/navbar.css" rel="stylesheet"/>
+    <link href="../css/layout/header.css" rel="stylesheet"/>
+    <link href="../css/layout/content.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div id="navbar">
+        <div class="logo-box">
+            <div class="sidebar"></div>
+            <div class="logo"></div>
+        </div>
+        <div class="navbar-box">
+           <a class="navbar-item">
+                <div class="navbar-icon icon-dashboard"></div>
+                <div class="navbar-text">Tổng quan</div>
+           </a>
+           <a class="navbar-item">
+                <div class="navbar-icon icon-report"></div>
+                <div class="navbar-text">Báo cáo</div>
+           </a>
+           <a class="navbar-item">
+                <div class="navbar-icon icon-dashboard"></div>
+                <div class="navbar-text">Mua hàng</div>
+           </a>
+           <a class="navbar-item">
+                <div class="navbar-icon icon-dic-employee"></div>
+                <div class="navbar-text">Danh mục nhân viên</div>
+           </a>
+           <a class="navbar-item">
+                <div class="navbar-icon icon-dic-employee"></div>
+                <div class="navbar-text">Danh mục khách hàng</div>
+           </a>
+           <a class="navbar-item">
+                <div class="navbar-icon icon-setting"></div>
+                <div class="navbar-text">Thiết lập hệ thống</div>
+           </a>
+        </div>
+    </div>
+    <div id="header">
+        <div class="page-title">
+            <select>
+                <option value="" disabled selected>Select your option</option>
+                <option value="hurr">Durr</option>
+            </select>
+            <div class="page-right">
+                <button id="btnAdd" class="btn-default">Thêm nhân viên</button>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="page-title">
+            <div class="page-left"> Danh sách nhân viên</div>
+            <div class="page-right">
+                <button id="btnAdd" class="btn-default">Thêm nhân viên</button>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <input type="text" class="input-search" style="width: 280px;" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại" />
+            <select class="combo-box">
+                <option value="">Tất cả phòng ban</option>
+                <option value="hurr">Phòng nhân sự</option>
+                <option value="hurr">Phòng đào tạo</option>
+                <option value="hurr">Phòng công nghệ</option>
+                <option value="hurr">Phòng Marketting</option>
+            </select>
+            <select class="combo-box">
+                <option value="">Tất cả vị trí</option>
+                <option value="hurr">Giám đốc</option>
+                <option value="hurr">Thu ngân</option>
+                <option value="hurr">Nhân viên Marketing</option>
+            </select>
+            <button class="btn-refresh"></button>
+        </div>
+
+        <div class="grid">
+            <table id="tblListEmployee" class="table" width="100%" border="0">
+                <thead>
+                    <tr>
+                        <th>Mã nhân viên</th>
+                        <th>Họ và tên</th>
+                        <th>Giới tính</th>
+                        <th>Ngày sinh</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Chức vụ</th>
+                        <th>Phòng ban</th>
+                        <th>Mức lương cơ bản</th>
+                        <th>Tình trạng công việc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="paging">
+            <div data-v-a72348a4="" class="paging-bar">
+                <div data-v-a72348a4="" class="paging-record-info">
+                    Hiển thị 
+                    <b data-v-a72348a4="">1-10/1000</b> 
+                    nhân viên
+                </div>
+                <div data-v-a72348a4="" class="paging-option">
+                    <div data-v-a72348a4="" class="btn-select-page m-btn-firstpage"></div>
+                    <div data-v-a72348a4="" class="btn-select-page m-btn-prev-page"></div>
+                    <div data-v-a72348a4="" class="m-btn-list-page">
+                        <button data-v-a72348a4="" class="btn-pagenumber btn-pagenumber-selected">1</button>
+                        <button data-v-a72348a4="" class="btn-pagenumber">2</button>
+                        <button data-v-a72348a4="" class="btn-pagenumber">3</button>
+                        <button data-v-a72348a4="" class="btn-pagenumber">4</button>
+                    </div>
+                    <div data-v-a72348a4="" class="btn-select-page m-btn-next-page"></div>
+                    <div data-v-a72348a4="" class="btn-select-page m-btn-lastpage"></div>
+                </div>
+                <div data-v-a72348a4="" class="paging-record-option">
+                    <b data-v-a72348a4="">10</b> nhân viên/trang
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../lib/jquery-3.6.0.min.js"></script>
+    <script src="../js/page/customer.js"></script>
+</body>
+</html>

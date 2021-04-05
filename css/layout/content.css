@@ -1,0 +1,89 @@
+#content {
+    position: absolute;
+    top: 60px;
+    left: 200px;
+    right: 0px;
+    bottom: 0px;
+    padding: 24px;
+}
+
+.page-title {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.page-title .page-right {
+    position: absolute;
+    right: 24px;
+}
+
+.page-title .page-left {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.toolbar {
+    margin-top: 16px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 42px;
+}
+
+.grid {
+    position: absolute;
+    right: 24px;
+    left: 24px;
+    bottom: 60px;
+    top: 128px;
+    overflow-y: auto;
+}
+
+.paging {
+    position: absolute;
+    bottom: 0px;
+    height: 60px;
+    left: 24px;
+    right: 24px;
+}
+
+#content .paging-bar {
+    height: 56px;
+}
+
+.paging-bar {
+    border-top: 1px solid #bbbbbb;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 16px;
+    z-index: 1 im !important;
+}
+
+.paging-bar .paging-record-info {
+    position: absolute;
+    left: 16px;
+}
+
+.paging-bar .paging-record-option {
+    position: absolute;
+    right: 16px;
+}
+
+.btn-pagenumber {
+    width: 30px;
+    height: 30px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #e9ebee;
+    cursor: pointer !important;
+}
+
+.btn-pagenumber.btn-pagenumber-selected,
+.btn-pagenumber-selected:hover {
+    background-color: #019160;
+    color: #ffffff;
+}
