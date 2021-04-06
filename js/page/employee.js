@@ -13,6 +13,7 @@ function setEvent() {
         $('.dialog input').val(null);
         $('.dialog select').val(null);
         $('#dlgCustomerDetail').removeClass('dialog-hide');
+        $('#txtCustomerCode').focus();
     });
 
     $(document).on('click', '.dialog-close-button', function() {
