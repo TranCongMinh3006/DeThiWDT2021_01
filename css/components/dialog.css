@@ -64,3 +64,7 @@
     position: absolute;
     right: 24px;
 }
+
+.m-col>label span {
+    color: red;
+}

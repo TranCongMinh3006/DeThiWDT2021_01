@@ -13,3 +13,11 @@
 .icon-setting {
     background-image: url('../../Resource/icon/setting.png');
 }
+
+.icon-avatar {
+    background-image: url('../../Resource/icon/avatar-default.png');
+}
+
+.icon-3dots {
+    background-image: url('../../Resource/icon/option.png');
+}

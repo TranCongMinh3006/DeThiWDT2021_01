@@ -87,3 +87,15 @@
     background-color: #019160;
     color: #ffffff;
 }
+
+#input-search {
+    margin-top: 4px;
+}
+
+#input-select {
+    display: flex;
+}
+
+#input-select>select {
+    margin-left: 10px;
+}

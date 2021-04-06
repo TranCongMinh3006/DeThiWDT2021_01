@@ -44,11 +44,19 @@
         </div>
     </div>
     <div id="header">
-            <select class="combo-box combo-box-header">
-                <option value="">Nhà hàng biển đông</option>
-            </select>
+            <div>
+                <select class="combo-box-header">
+                    <option value="">Nhà hàng biển đông</option>
+                </select>
+            </div>
             <div class="page-right">
-                <button class="btn-default">cho nay hien thi ten</button>
+                <div class="navbar-box">
+                    <a class="navbar-item">
+                        <div class="navbar-icon icon-avatar"></div>
+                        <div class="navbar-text">Trần Công Minh</div>
+                        <div class="navbar-icon icon-3dots"></div>
+                    </a>
+                </div>
             </div>
     </div>
     <div id="content">
@@ -60,20 +68,22 @@
         </div>
 
         <div class="toolbar">
-            <input type="text" class="input-search" style="width: 280px;" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại" />
-            <select class="combo-box">
-                <option value="">Tất cả phòng ban</option>
-                <option value="hurr">Phòng nhân sự</option>
-                <option value="hurr">Phòng đào tạo</option>
-                <option value="hurr">Phòng công nghệ</option>
-                <option value="hurr">Phòng Marketting</option>
-            </select>
-            <select class="combo-box">
-                <option value="">Tất cả vị trí</option>
-                <option value="hurr">Giám đốc</option>
-                <option value="hurr">Thu ngân</option>
-                <option value="hurr">Nhân viên Marketing</option>
-            </select>
+            <input type="text" id ="input-search" class="input-search" style="width: 280px;" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại" />
+            <div id="input-select">
+                <select>
+                    <option value="">Tất cả phòng ban</option>
+                    <option value="hurr">Phòng nhân sự</option>
+                    <option value="hurr">Phòng đào tạo</option>
+                    <option value="hurr">Phòng công nghệ</option>
+                    <option value="hurr">Phòng Marketting</option>
+                </select>
+                <select>
+                    <option value="">Tất cả vị trí</option>
+                    <option value="hurr">Giám đốc</option>
+                    <option value="hurr">Thu ngân</option>
+                    <option value="hurr">Nhân viên Marketting</option>
+                </select>
+            </div>
             <button class="btn-refresh"></button>
         </div>
 
@@ -155,11 +165,11 @@
                     </div>
                     <div class="m-row">
                         <div class="m-col">
-                            <label>Mã nhân viên(*)</label>
+                            <label>Mã nhân viên(<span>*</span>)</label>
                             <input id="txtCustomerCode" type="text" />
                         </div>
                         <div class="m-col">
-                            <label>Họ và tên(*)</label>
+                            <label>Họ và tên(<span>*</span>)</label>
                             <input id="txtFullName" type="text" />
                         </div>
                     </div>
@@ -179,27 +189,27 @@
                     </div>
                     <div class="m-row">
                         <div class="m-col">
-                            <label>Số CMTND/Căn cước(*)</label>
-                            <input id="txtEmail" type="text" />
+                            <label>Số CMTND/Căn cước(<span>*</span>)</label>
+                            <input id="cmtnd" type="text" />
                         </div>
                         <div class="m-col">
                             <label>Ngày cấp</label>
-                            <input id="dtDateOfBirth" type="date" />
+                            <input id="ngay_cap" type="date" />
                         </div>
                     </div>
                     <div class="m-row">
                         <div class="m-col">
                             <label>Nơi cấp</label>
-                            <input id="txtEmail" type="text" />
+                            <input id="noi_cap" type="text" />
                         </div>
                     </div>
                     <div class="m-row">
                         <div class="m-col">
-                            <label>Email(*)</label>
+                            <label>Email(<span>*</span>)</label>
                             <input id="txtEmail" type="text" />
                         </div>
                         <div class="m-col">
-                            <label>Số điện thoại(*)</label>
+                            <label>Số điện thoại(<span>*</span>)</label>
                             <input id="txtPhoneNumber" type="text" />
                         </div>
                     </div>
@@ -209,44 +219,44 @@
                     <div class="m-row">
                         <div class="m-col">
                             <label>Vị trí</label>
-                            <select id="cbCustomerGroup">
-                                <option value="0cb5da7c-59cd-4953-b17e-c9adc9161663">Nhóm khách hàng MISA</option>
-                                <option value="19165ed7-212e-21c4-0428-030d4265475f">Khách VIP</option>
-                                <option value="3631011e-4559-4ad8-b0ad-cb989f2177da">Khách vãng lai</option>
-                                <option value="7a0b757e-41eb-4df6-c6f8-494a84b910f4">Khách thường</option>
+                            <select id="vi_tri">
+                                <option value="Giám đốc">Giám đốc</option>
+                                <option value="Thu ngân">Thu ngân</option>
+                                <option value="Nhân viên Marketting">Nhân viên Marketting</option>
                             </select>
                         </div>
                         <div class="m-col">
                             <label>Phòng ban</label>
-                            <select id="cbCustomerGroup">
-                                <option value="0cb5da7c-59cd-4953-b17e-c9adc9161663">Nhóm khách hàng MISA</option>
-                                <option value="19165ed7-212e-21c4-0428-030d4265475f">Khách VIP</option>
-                                <option value="3631011e-4559-4ad8-b0ad-cb989f2177da">Khách vãng lai</option>
-                                <option value="7a0b757e-41eb-4df6-c6f8-494a84b910f4">Khách thường</option>
+                            <select id="phong_ban">
+                                <option value="Phòng nhân sự">Phòng nhân sự</option>
+                                <option value="Phòng đào tạo">Phòng đào tạo</option>
+                                <option value="Phòng công nghệ">Phòng công nghệ</option>
+                                <option value="Phòng Marketting">Phòng Marketting</option>
                             </select>
                         </div>
                     </div>
                     <div class="m-row">
                         <div class="m-col">
                             <label>Mã số thuế cá nhân</label>
-                            <input id="txtEmail" type="text" />
+                            <input id="ms_thue" type="text" />
                         </div>
                         <div class="m-col">
                             <label>Mức lương cơ bản</label>
-                            <input id="txtPhoneNumber" type="text" />
+                            <input id="luong_co_ban" type="text" />
                         </div>
                     </div>
                     <div class="m-row">
                         <div class="m-col">
                             <label>Ngày gia nhập công ty</label>
-                            <input id="dtDateOfBirth" type="date" />
+                            <input id="ngay_gia_nhap" type="date" />
                         </div>
                         <div class="m-col">
                             <label>Tình trạng công việc</label>
-                            <select id='cbGender'>
-                                <option value="1">Nam</option>
-                                <option value="0" >Nữ</option>
-                                <option value="2">Không xác định</option>
+                            <select id='tinh_trang_cong_viec'>
+                                <option value="0">Đang thử việc</option>
+                                <option value="1">Đang làm việc</option>
+                                <option value="2">Đã nghỉ việc</option>
+                                <option value="3">Đã nghỉ hưu</option>
                             </select>
                         </div>
                     </div>
