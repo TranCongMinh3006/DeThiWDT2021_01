@@ -7,6 +7,7 @@
     <link href="../css/layout/navbar.css" rel="stylesheet"/>
     <link href="../css/layout/header.css" rel="stylesheet"/>
     <link href="../css/layout/content.css" rel="stylesheet"/>
+    <link href="../css/page/employee_info.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -43,15 +44,12 @@
         </div>
     </div>
     <div id="header">
-        <div class="page-title">
-            <select>
-                <option value="" disabled selected>Select your option</option>
-                <option value="hurr">Durr</option>
+            <select class="combo-box combo-box-header">
+                <option value="">Nhà hàng biển đông</option>
             </select>
             <div class="page-right">
-                <button id="btnAdd" class="btn-default">Thêm nhân viên</button>
+                <button class="btn-default">cho nay hien thi ten</button>
             </div>
-        </div>
     </div>
     <div id="content">
         <div class="page-title">
@@ -137,7 +135,129 @@
             </div>
         </div>
     </div>
+    
+    <div id="dlgCustomerDetail" class="dialog dialog-hide">
+        <div class="model"></div>
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <div class="dialog-title">THÔNG TIN NHÂN VIÊN</div>
+                <div class="dialog-close-button">&#x2715;</div>
+            </div>
+            <div id="dialog-navbar-and-body">
+                <div id="dialog-navbar">
+                    <div class="avatar">
+                        cho nay de nhap avatar
+                    </div>
+                </div>
+                <div class="dialog-body">
+                    <div class="m-row">
+                        A.Thông tin chung:
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Mã nhân viên(*)</label>
+                            <input id="txtCustomerCode" type="text" />
+                        </div>
+                        <div class="m-col">
+                            <label>Họ và tên(*)</label>
+                            <input id="txtFullName" type="text" />
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Ngày sinh</label>
+                            <input id="dtDateOfBirth" type="date" />
+                        </div>
+                        <div class="m-col">
+                            <label>Giới tính</label>
+                            <select id='cbGender'>
+                                <option value="1">Nam</option>
+                                <option value="0" >Nữ</option>
+                                <option value="2">Không xác định</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Số CMTND/Căn cước(*)</label>
+                            <input id="txtEmail" type="text" />
+                        </div>
+                        <div class="m-col">
+                            <label>Ngày cấp</label>
+                            <input id="dtDateOfBirth" type="date" />
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Nơi cấp</label>
+                            <input id="txtEmail" type="text" />
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Email(*)</label>
+                            <input id="txtEmail" type="text" />
+                        </div>
+                        <div class="m-col">
+                            <label>Số điện thoại(*)</label>
+                            <input id="txtPhoneNumber" type="text" />
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        B.Thông tin công việc:
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Vị trí</label>
+                            <select id="cbCustomerGroup">
+                                <option value="0cb5da7c-59cd-4953-b17e-c9adc9161663">Nhóm khách hàng MISA</option>
+                                <option value="19165ed7-212e-21c4-0428-030d4265475f">Khách VIP</option>
+                                <option value="3631011e-4559-4ad8-b0ad-cb989f2177da">Khách vãng lai</option>
+                                <option value="7a0b757e-41eb-4df6-c6f8-494a84b910f4">Khách thường</option>
+                            </select>
+                        </div>
+                        <div class="m-col">
+                            <label>Phòng ban</label>
+                            <select id="cbCustomerGroup">
+                                <option value="0cb5da7c-59cd-4953-b17e-c9adc9161663">Nhóm khách hàng MISA</option>
+                                <option value="19165ed7-212e-21c4-0428-030d4265475f">Khách VIP</option>
+                                <option value="3631011e-4559-4ad8-b0ad-cb989f2177da">Khách vãng lai</option>
+                                <option value="7a0b757e-41eb-4df6-c6f8-494a84b910f4">Khách thường</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Mã số thuế cá nhân</label>
+                            <input id="txtEmail" type="text" />
+                        </div>
+                        <div class="m-col">
+                            <label>Mức lương cơ bản</label>
+                            <input id="txtPhoneNumber" type="text" />
+                        </div>
+                    </div>
+                    <div class="m-row">
+                        <div class="m-col">
+                            <label>Ngày gia nhập công ty</label>
+                            <input id="dtDateOfBirth" type="date" />
+                        </div>
+                        <div class="m-col">
+                            <label>Tình trạng công việc</label>
+                            <select id='cbGender'>
+                                <option value="1">Nam</option>
+                                <option value="0" >Nữ</option>
+                                <option value="2">Không xác định</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <button id="btnSave" class="btn-default">Lưu</button>
+            </div>
+        </div>
+    </div>
     <script src="../lib/jquery-3.6.0.min.js"></script>
-    <script src="../js/page/customer.js"></script>
+    <script src="../js/page/employee.js"></script>
 </body>
 </html>

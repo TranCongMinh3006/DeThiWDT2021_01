@@ -5,4 +5,16 @@
     left: 200px;
     right: 0px;
     height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#header .page-right {
+    position: absolute;
+    right: 24px;
+}
+
+#header .page-left {
+    font-size: 24px;
+    font-weight: bold;
 }

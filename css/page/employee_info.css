@@ -1,0 +1,36 @@
+.m-col {
+    width: 50%;
+    float: left;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
+
+.m-row {
+    width: 100%;
+    display: flex;
+    margin-top: 8px;
+    position: relative;
+}
+
+.m-row label {
+    display: block;
+}
+
+.m-row input,
+select {
+    margin-top: 4px;
+}
+
+#dialog-navbar-and-body {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#dialog-navbar {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.dialog-body {
+    width: 100%;
+}
