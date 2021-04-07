@@ -60,9 +60,26 @@
     right: 0;
 }
 
-.dialog .dialog-footer button {
+
+/* .dialog .dialog-footer button {
     position: absolute;
     right: 24px;
+} */
+
+.dialog-footer #btnSave {
+    position: absolute;
+    right: 24px;
+}
+
+.dialog-footer #btnCancel {
+    position: absolute;
+    right: 110px;
+}
+
+.dialog-footer #btnDelete {
+    position: absolute;
+    left: 24px;
+    background-color: red;
 }
 
 .m-col>label span {

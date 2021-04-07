@@ -4,7 +4,7 @@ $(document).ready(function() {
 })
 
 var formMode = null;
-var customerIdSelected = null;
+var employeeIdSelected = null;
 
 function setEvent() {
 
@@ -21,6 +21,28 @@ function setEvent() {
     });
 
     $('#btnSave').click(btnSaveOnClick);
+    $('#tblListEmployee').on('dblclick', 'tbody tr', rowOnDblClick);
+
+    $(document).on('click', '#btnDelete', function() {
+        // Lấy khóa chính của bản ghi người dùng vừa chọn:
+        var employeeId = $('#tblListEmployee tbody tr.bg-selected-row').data('recordId');
+        console.log(employeeId)
+            // Hiển thị cảnh báo cho người dùng:
+        var result = confirm("Bạn có chắc chắn muốn xóa Khách hàng khỏi hệ thống?");
+        if (result) {
+            $.ajax({
+                method: "DELETE",
+                url: "http://api.manhnv.net/v1/employees/" + employeeId
+            }).done(function() {
+                alert("Xóa thành công!");
+                loadData();
+            }).fail(function(res) {
+                alert("Không thể xóa khách hàng này, vui lòng kiểm tra lại..");
+            })
+        }
+        // Thực hiện xóa nếu khách hàng xác nhận (Nhấn đồng ý xóa):
+
+    })
 }
 
 function loadData() {
@@ -118,9 +140,9 @@ function btnSaveOnClick() {
     var method = "POST";
     var url = "http://api.manhnv.net/v1/employees";
     if (formMode == 2) {
-        employee.CustomerId = customerIdSelected;
+        employee.EmployeeId = employeeIdSelected;
         method = "PUT";
-        url = "http://api.manhnv.net/v1/employees/" + customerIdSelected;
+        url = "http://api.manhnv.net/v1/employees/" + employeeIdSelected;
     }
     // debugger;
     // Gọi service POST để thực hiện cất dữ liệu:
@@ -187,4 +209,38 @@ function formatWorkStatus(WorkStatusCode) {
     } else {
         return "Đã nghỉ hưu";
     }
+}
+
+function rowOnDblClick() {
+    formMode = 2;
+    // Lấy Id của bản ghi:
+    var employeeId = $(this).data('recordId');
+    employeeIdSelected = employeeId;
+    // Lấy thông tin chi tiết khách hàng:
+    $.ajax({
+            method: "GET",
+            url: "http://api.manhnv.net/v1/employees/" + employeeId
+        }).done(function(res) {
+            // Bindding dữ liệu lên form chi tiết:
+            var employee = res;
+            $('#txtCustomerCode').val(employee.EmployeeCode);
+            $('#txtFullName').val(employee.FullName);
+            $('#dtDateOfBirth').val(employee.DateOfBirth);
+            $('#cbGender').val(employee.Gender);
+            $('#cmtnd').val(employee.IdentityNumber);
+            $('#ngay_cap').val(employee.IdentityDate);
+            $('#noi_cap').val(employee.IdentityPlace);
+            $('#txtEmail').val(employee.Email);
+            $('#txtPhoneNumber').val(employee.PhoneNumber);
+            $('#vi_tri').val(employee.PositionName);
+            $('#phong_ban').val(employee.DepartmentName);
+            $('#ms_thue').val(employee.PersonalTaxCode);
+            $('#luong_co_ban').val(employee.Salary);
+            $('#ngay_gia_nhap').val(employee.JoinDate);
+            $('#tinh_trang_cong_viec').val(employee.WorkStatus);
+        }).fail(function(res) {
+            alert(res.responseText);
+        })
+        // Hiển thị form chi tiết:
+    $('#dlgCustomerDetail').removeClass('dialog-hide');
 }
